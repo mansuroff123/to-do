@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1 class="text-center mb-4">Vazifani Tahrirlash</h1>
+<form method="POST">
+    {% csrf_token %}
+    <div class="mb-3">
+        {{ form.title.label_tag }} {{ form.title }}
+    </div>
+
+    <div class="form-check mb-3">
+        {{ form.completed }} {{ form.completed.label_tag }}
+    </div>
+
+    <button class="btn btn-primary" type="submit">Saqlash</button>
+    <a href="{% url 'task_list' %}" class="btn btn-secondary">Orqaga qaytish</a>
+</form>
+
+{% endblock %}
